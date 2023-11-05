@@ -13,6 +13,13 @@ $(function () {
   saveBtn.click(function () {
     var time_block = $(this).parent();
     var text_area = time_block.children("textarea");
+    var message = "Appointment Added to localStorage &#10003"
+    
+    $('#message').html(message);
+
+    setTimeout(function(){
+      $('#message').html('');
+    },1000)
 
     var value = text_area.val();
     var key = $(time_block).attr('id');
@@ -65,4 +72,5 @@ $(function () {
   var dateEl = $("#currentDay");
 
   dateEl.text(currentDate);
+
 });
