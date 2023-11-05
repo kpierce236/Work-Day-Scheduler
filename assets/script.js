@@ -1,19 +1,14 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
+  
   var saveBtn = $(".saveBtn");
 
+  // Event Listener that listen for when we click the save button
+  // When clicked it displays a message that the appointment is saved
+  // It also saves the value of the textarea to local storage
   saveBtn.click(function () {
     var time_block = $(this).parent();
     var text_area = time_block.children("textarea");
-    var message = "Appointment Added to localStorage &#10003"
+    var message = "Appointment Added to <code>localStorage</code> &#10003"
     
     $('#message').html(message);
 
@@ -26,16 +21,12 @@ $(function () {
    
     localStorage.setItem(key,value);
   })
-
-
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
   
-
   var timeBlckList = $(".time-block");
+
+  //For loop that iterates through all timeblock elements 
+  //And depending on the time given from the dayjs api
+  //It will change the stlying to a different color
   for (var i = 0; i < timeBlckList.length; i++) {
     var currentHour = dayjs().format("HH");
     var timeID = $(timeBlckList[i]).attr('id');
@@ -52,9 +43,9 @@ $(function () {
   }
   
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+
+  //For loop that iterates through the timeblocks and posts the saved value
+  // local storage in the text area
   for (var i = 0; i < timeBlckList.length; i++) {
     var text_area = $(timeBlckList[i]).children("textarea");
     var timeID = $(timeBlckList[i]).attr('id');
@@ -64,7 +55,7 @@ $(function () {
     
   }
 
-  // TODO: Add code to display the current date in the header of the page.
+  // Displays the current date from the dayjs api in the header
   var advancedFormat = window.dayjs_plugin_advancedFormat;
   dayjs.extend(advancedFormat);
 
