@@ -58,6 +58,9 @@ $(function () {
   }
 
   // TODO: Add code to display the current date in the header of the page.
+  var advancedFormat = window.dayjs_plugin_advancedFormat;
+  dayjs.extend(advancedFormat);
+
   var currentDate = dayjs().format('dddd, MMMM Do');
   var dateEl = $("#currentDay");
 
