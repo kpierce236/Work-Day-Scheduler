@@ -2,7 +2,7 @@
 
 ## Description
 
-In this application I added functionaility to an existing appilcation using Third Party APIs. The appilcation is a work day scheduler that tracks the time, date, and items that are scheduled each hour throughout a work day. The work day sch in the day. The date is also tracked through the Day.js API as well and displayed at the bottom of the header. Lastly you can also save data inputed into a time block to local storage so that you can see it again when you return to the web appilcation.
+In this application I added functionaility to an existing appilcation using Third Party APIs. The appilcation is a work day scheduler that tracks the time, date, and items that are scheduled each hour throughout a work day. Each time block is color coded to represent the whether the hour block is in the past, present, or future. The date is also tracked through the Day.js API as well and displayed at the bottom of the header. Lastly you can also save data inputed into a time block to local storage so that you can see it again when you return to the web appilcation.
 
 ### Take-Aways
 
