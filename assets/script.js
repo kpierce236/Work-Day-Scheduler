@@ -42,8 +42,6 @@ $(function () {
     }
   }
   
-
-
   //For loop that iterates through the timeblocks and posts the saved value
   // local storage in the text area
   for (var i = 0; i < timeBlckList.length; i++) {
